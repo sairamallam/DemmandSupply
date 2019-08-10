@@ -7,22 +7,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hcl.supplymanagementsystem.dto.SkillDto;
-import com.hcl.supplymanagementsystem.service.SkillService;
+import com.hcl.supplymanagementsystem.dto.ResourcesByDemandDto;
+import com.hcl.supplymanagementsystem.service.ResourceByDemandService;
 
 @RestController
-@RequestMapping("/skill")
+@RequestMapping("/resources")
 @CrossOrigin("*")
-public class SkillController {
+public class ResourceByIdController {
 	@Autowired
-	SkillService skilService;
+	ResourceByDemandService resourceByIdService;
 
-	@GetMapping()
-	public ResponseEntity<List<SkillDto>> getSkills() {
-		return new ResponseEntity<>(skilService.getSkills(), HttpStatus.OK);
+	@GetMapping("/{id}")
+	public ResponseEntity<List<ResourcesByDemandDto>> getResources(@PathVariable Long id) {
+		return new ResponseEntity<>(resourceByIdService.getResourcesByDemand(id), HttpStatus.OK);
 	}
 
 }

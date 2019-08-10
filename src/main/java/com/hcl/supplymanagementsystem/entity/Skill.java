@@ -15,16 +15,15 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class ASkill implements Serializable {
+public class Skill implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long skillId;
+	private Integer skillId;
 	
 	private String skillName;
-	private String group;
 
 //	@OneToOne
 //	@JoinColumn(name = "skill_group")

@@ -1,5 +1,9 @@
 package com.hcl.supplymanagementsystem.repository;
 
-public class SkillRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hcl.supplymanagementsystem.entity.Skill;
+
+public interface SkillRepository extends JpaRepository<Skill, Integer>{
 
 }

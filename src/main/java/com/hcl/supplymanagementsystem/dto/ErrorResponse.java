@@ -11,15 +11,11 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillDto implements Serializable{
-
-	/**
+public class ErrorResponse implements Serializable{/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private Integer skillId;
-
-	private String skillName;
+	private Integer statusCode;
+	private String message;
 
 }
